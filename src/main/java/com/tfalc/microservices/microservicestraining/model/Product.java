@@ -1,6 +1,15 @@
 package com.tfalc.microservices.microservicestraining.model;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.elasticsearch.annotations.Document;
+
+@Document(indexName = "product", type = "catalog")
 public class Product {
+
+    @Id
+    private Long id;
+    private String name;
+    private Integer amount;
 
     public Long getId() {
         return id;
@@ -25,10 +34,4 @@ public class Product {
     public void setAmount(Integer amount) {
         this.amount = amount;
     }
-
-    private Long id;
-    private String name;
-    private Integer amount;
-
-
 }
